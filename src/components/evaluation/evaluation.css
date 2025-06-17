@@ -1,0 +1,921 @@
+/* 测评页面样式 */
+.evaluation-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  background: #fff;
+  transition: padding 0.3s ease;
+}
+
+/* When chat is closed, apply 190px margin */
+.evaluation-page.chat-closed {
+  padding: 24px 190px;
+}
+
+/* When chat is open, keep current margins */
+.evaluation-page.chat-open {
+  padding: 24px 16px;
+}
+
+/* Responsive adjustments for the evaluation page margins */
+@media (max-width: 1440px) {
+  .evaluation-page.chat-closed {
+    padding: 24px 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .evaluation-page.chat-closed {
+    padding: 24px 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .evaluation-page.chat-closed {
+    padding: 24px 40px;
+  }
+
+  .evaluation-page.chat-open {
+    padding: 24px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .evaluation-page.chat-closed,
+  .evaluation-page.chat-open {
+    padding: 24px 16px;
+  }
+}
+
+/* 页面头部 - 修改为space-between布局 */
+.evaluation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.back-button {
+  font-size: 18px;
+  margin-right: 16px;
+}
+
+.evaluation-title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.evaluation-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evaluation-meta {
+  display: flex;
+  gap: 16px;
+  color: #8f9098;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* 进度条部分 */
+.evaluation-progress-section {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fe;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.progress-label {
+  width: 80px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2024;
+}
+
+.evaluation-progress {
+  flex: 1;
+  margin: 0 16px;
+}
+
+.progress-value {
+  width: 50px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2024;
+}
+
+/* 评估内容区域 */
+.evaluation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.section-icon {
+  color: #006ffd;
+  font-size: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2024;
+}
+
+/* 模型评估结果卡片 */
+.model-results {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* 增加模型之间的间距 */
+  margin-bottom: 24px;
+}
+
+.model-result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 卡片与优化区域之间的间距 */
+}
+
+.model-result-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  /* 添加边框以增强模型之间的区分 */
+  border-top: 4px solid #006ffd !important;
+}
+
+.model-result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.model-result-card .ant-card-body {
+  padding: 32px; /* 增加内边距 */
+}
+
+.model-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px; /* 增加与下方内容的间距 */
+}
+
+.model-name-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.model-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.model-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2024;
+  margin-bottom: 4px;
+}
+
+.model-score {
+  font-size: 14px;
+  color: #71727a;
+}
+
+.model-trustworthiness {
+  position: relative;
+  height: 32px;
+  min-width: 120px;
+  margin-top: 8px; /* 调整置信度位置，避免与文字重叠 */
+}
+
+.trustworthiness-placeholder {
+  height: 32px;
+}
+
+.ant-ribbon {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.model-description {
+  margin-bottom: 32px !important; /* 增加与下方内容的间距 */
+  line-height: 1.8;
+  color: #1f2024;
+  font-size: 15px;
+  background-color: #f8f9fe;
+  padding: 20px; /* 增加内边距 */
+  border-radius: 8px;
+  border-left: 4px solid #006ffd;
+}
+
+.model-evaluation-details {
+  margin-bottom: 32px; /* 增加与下方内容的间距 */
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.model-strengths,
+.model-weaknesses {
+  padding: 24px; /* 增加内边距 */
+  border-radius: 8px;
+  height: 100%;
+}
+
+.model-strengths {
+  background-color: rgba(58, 192, 160, 0.08); /* 增强背景色 */
+  border: 1px solid rgba(58, 192, 160, 0.2);
+}
+
+.model-weaknesses {
+  background-color: rgba(255, 77, 79, 0.08); /* 增强背景色 */
+  border: 1px solid rgba(255, 77, 79, 0.2);
+}
+
+.strengths-header,
+.weaknesses-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strengths-icon {
+  color: #3ac0a0;
+  font-size: 18px;
+}
+
+.weaknesses-icon {
+  color: #ff4d4f;
+  font-size: 18px;
+}
+
+.strengths-list,
+.weaknesses-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.strength-item,
+.weakness-item {
+  margin-bottom: 16px; /* 增加列表项间距 */
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.strength-item:last-child,
+.weakness-item:last-child {
+  margin-bottom: 0;
+}
+
+.model-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.detail-button {
+  border-radius: 6px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.optimize-button {
+  background-color: #006ffd;
+  border-radius: 6px;
+  height: 40px;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0, 111, 253, 0.3);
+  transition: all 0.3s ease;
+}
+
+.optimize-button:hover {
+  background-color: #0058ca;
+  box-shadow: 0 4px 12px rgba(0, 111, 253, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 优化区域 - 子树结构 */
+.optimization-area {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 48px; /* 缩进，形成树形结构 */
+  position: relative;
+  margin-bottom: 16px;
+}
+
+/* 添加连接线，形成树形结构 */
+.optimization-area::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 24px;
+  width: 2px;
+  height: calc(100% + 4px);
+  background-color: #e8e9f1;
+}
+
+.optimization-area::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  width: 24px;
+  height: 2px;
+  background-color: #e8e9f1;
+}
+
+/* 优化部分 */
+.optimization-section {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  /* 添加边框以增强区域划分 */
+  border-left: 4px solid #006ffd !important;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2024;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-icon {
+  color: #006ffd;
+  font-size: 18px;
+}
+
+.section-divider {
+  margin: 16px 0 20px !important;
+  border-top: 1px solid #eaedf3;
+}
+
+.optimization-description {
+  color: #71727a;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.optimization-input {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 15px;
+  padding: 16px; /* 增加内边距 */
+  border-color: #d9d9d9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.optimization-input:focus,
+.optimization-input:hover {
+  border-color: #006ffd;
+  box-shadow: 0 2px 8px rgba(0, 111, 253, 0.2);
+}
+
+.optimization-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.re-evaluate-button {
+  background-color: #006ffd;
+  border-radius: 6px;
+  height: 44px;
+  padding: 0 28px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 111, 253, 0.3);
+  transition: all 0.3s ease;
+}
+
+.re-evaluate-button:hover {
+  background-color: #0058ca;
+  box-shadow: 0 4px 12px rgba(0, 111, 253, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 优化历史部分 */
+.optimization-history-section {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  /* 添加边框以增强区域划分 */
+  border-left: 4px solid #006ffd !important;
+}
+
+.history-description {
+  color: #71727a;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.history-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.history-item {
+  background-color: #f8f9fe;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #006ffd; /* 添加左侧边框增强视觉区分 */
+}
+
+.history-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-item .ant-card-body {
+  padding: 20px;
+}
+
+.history-item-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2024;
+  font-size: 16px;
+}
+
+.history-item-description {
+  color: #71727a;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.history-item-result {
+  color: #006ffd;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 12px;
+  background-color: rgba(0, 111, 253, 0.05);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* 加载和错误状态 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  gap: 24px;
+}
+
+.loading-text {
+  color: #71727a;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 16px;
+  margin: 24px 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .model-evaluation-details {
+    flex-direction: column;
+  }
+
+  .model-strengths,
+  .model-weaknesses {
+    margin-bottom: 16px;
+  }
+
+  .model-result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .model-trustworthiness {
+    margin-top: 16px;
+    align-self: flex-end;
+  }
+
+  .evaluation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header-right {
+    align-self: flex-end;
+  }
+
+  .optimization-area {
+    padding-left: 24px; /* 在移动端减少缩进 */
+  }
+
+  .optimization-area::before,
+  .optimization-area::after {
+    left: 12px; /* 调整连接线位置 */
+  }
+
+  .optimization-area::after {
+    width: 12px; /* 减少连接线长度 */
+  }
+}
+
+/* 评估和图表的整体容器 */
+.evaluation-charts-wrapper {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* 左侧评估区域 */
+.evaluation-left-section {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 右侧图表区域 */
+.evaluation-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 评估结果区域 */
+.evaluation-section {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); */
+}
+
+/* 评估标题区域 */
+.evaluation-header {
+  margin-bottom: 24px;
+}
+
+/* 模型信息区域 */
+.evaluation-model-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 模型头像区域 */
+.model-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #f8f9fe;
+  padding: 16px 24px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.model-avatar {
+  background-color: #006ffd;
+}
+
+.model-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.model-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2024;
+}
+
+.model-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.evaluation-content {
+  padding: 20px;
+  background-color: #f8f9fe;
+  border-radius: 8px;
+}
+
+.evaluation-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #1f2024;
+}
+
+/* 折线图区域 */
+.line-chart-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.line-chart-container {
+  height: 200px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* 评分和雷达图区域 */
+.score-radar-section {
+  display: flex;
+  gap: 24px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.metrics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 200px;
+}
+
+.metric-item {
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #8f9098;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2024;
+}
+
+.metric-change {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.metric-change.positive {
+  color: #3ac0a0;
+}
+
+.metric-change.negative {
+  color: #ff4d4f;
+}
+
+.radar-chart-content {
+  flex: 1;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+
+
+
+
+.task-detail-title-section {
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.task-creator-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 模型信息折叠面板样式 */
+.model-panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+}
+
+.model-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.model-panel-header:hover {
+  background-color: #f8f9fe;
+}
+
+.model-panel-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.model-info {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.model-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2024;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.model-usage {
+  font-size: 14px;
+  color: #71727a;
+}
+
+.model-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.model-tag {
+  background: var(--color-primary-bg);
+  border: none;
+  color: var(--color-primary);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.model-panel-icon {
+  color: #8f9098;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.model-panel-icon:hover {
+  background-color: #f0f0f0;
+}
+
+.model-panel-content {
+  padding: 0 20px 20px;
+}
+
+.evaluation-content {
+  background-color: #f8f9fe;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.evaluation-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #1f2024;
+  font-size: 14px;
+}
+
+/* 其他间距调整 */
+.task-detail-breadcrumb {
+  margin-bottom: 12px;
+}
+
+.task-detail-title-section {
+  margin-bottom: 12px;
+}
+
+.task-footer-actions {
+  padding: 12px;
+}
+
+
+
+.model-selector .ant-select-selection-item {
+  color: #1f2024;
+  font-weight: 500;
+}
+
+/* 图例样式 */
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  user-select: none;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-label {
+  font-size: 12px;
+  color: #8f9098;
+}
+
+/* 多选下拉框样式优化 */
+.ant-select-multiple .ant-select-selection-item {
+  background: var(--color-primary-bg);
+  border: none;
+  color: var(--color-primary);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.ant-select-multiple .ant-select-selection-item-remove {
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.ant-select-dropdown .ant-select-item-option {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* 全选选项样式 */
+.select-all-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.select-all-option:hover {
+  background-color: #f5f5f5;
+}
+
+.select-all-option .ant-checkbox-wrapper {
+  width: 100%;
+}

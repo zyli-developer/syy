@@ -1,0 +1,289 @@
+/* User info container styles */
+.user-info-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e8e9f1;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.user-profile-trigger {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.user-avatar-container {
+  margin-right: 12px;
+}
+
+.user-avatar {
+  background-color: var(--color-primary);
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #8f9098;
+}
+
+.user-more-btn {
+  color: #8f9098;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* User popover styles */
+.user-popover-content {
+  width: 320px;
+  padding: 8px 0;
+}
+
+.user-popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.user-popover-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-popover-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-popover-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.user-popover-email {
+  font-size: 14px;
+  color: #8f9098;
+}
+
+.user-popover-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-popover-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-popover-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-popover-item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-popover-item-icon {
+  font-size: 18px;
+}
+
+.user-popover-item-text {
+  font-size: 14px;
+}
+
+.user-popover-upgrade-btn {
+  background-color: #000;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+.user-popover-tag {
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+.user-popover-hot-tag {
+  font-size: 12px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+.user-popover-arrow {
+  font-size: 12px;
+  color: #8f9098;
+}
+
+.user-popover-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #8f9098;
+  font-size: 12px;
+}
+
+/* Workspace popover styles */
+.workspace-popover-content {
+  width: 280px;
+  padding: 8px 0;
+}
+
+.workspace-popover-title {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  color: #8f9098;
+}
+
+.workspace-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.workspace-item:hover {
+  background-color: #f5f5f5;
+}
+
+.workspace-item-current {
+  background-color: #f0f7ff;
+}
+
+.workspace-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.workspace-avatar {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.workspace-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.workspace-role {
+  font-size: 12px;
+  color: #8f9098;
+}
+
+.workspace-current-icon {
+  color: #006ffd;
+}
+
+/* 新增：创建新工作区按钮 */
+.workspace-add-new {
+  padding: 12px 16px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 8px;
+}
+
+.workspace-add-new .ant-btn {
+  border-style: dashed;
+  border-color: #d9d9d9;
+  color: #8f9098;
+  transition: all 0.3s;
+}
+
+.workspace-add-new .ant-btn:hover {
+  color: #006ffd;
+  border-color: #006ffd;
+}
+
+/* Popover customization */
+.user-profile-popover .ant-popover-inner,
+.workspace-popover .ant-popover-inner {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 添加动画效果 */
+.user-profile-popover .ant-popover-inner-content,
+.workspace-popover .ant-popover-inner-content {
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.user-profile-popover.ant-popover-hidden .ant-popover-inner-content,
+.workspace-popover.ant-popover-hidden .ant-popover-inner-content {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.user-profile-popover:not(.ant-popover-hidden) .ant-popover-inner-content,
+.workspace-popover:not(.ant-popover-hidden) .ant-popover-inner-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 在文件末尾添加以下样式，确保弹窗正确显示 */
+
+/* 修复弹窗被截断的问题 */
+.ant-popover {
+  z-index: 1050 !important; /* 确保弹窗在最上层 */
+}
+
+/* 确保弹窗内容完整显示 */
+.user-profile-popover .ant-popover-inner,
+.workspace-popover .ant-popover-inner {
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+}
+
+/* 调整弹窗位置，避免被截断 */
+.user-profile-popover.ant-popover,
+.workspace-popover.ant-popover {
+  position: fixed;
+}
+
+/* 确保弹窗内容在小屏幕上也能完整显示 */
+@media (max-height: 600px) {
+  .user-popover-content,
+  .workspace-popover-content {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}

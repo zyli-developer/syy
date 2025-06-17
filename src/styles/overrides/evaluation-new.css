@@ -1,0 +1,31 @@
+﻿.evaluation-left-section,
+.evaluation-right-section {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 340px);
+}
+
+.evaluation-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.evaluation-model-info {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.evaluation-model-info::-webkit-scrollbar {
+    display: none;
+}
+
+.line-chart-section,
+.score-radar-section {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}

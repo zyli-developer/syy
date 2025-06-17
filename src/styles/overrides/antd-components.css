@@ -1,0 +1,131 @@
+/* Ant Design 组件样式覆盖 */
+
+/* Timeline组件样式 */
+.ant-timeline-item-head.ant-timeline-item-head-custom {
+  background: var(--color-bg-container) !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.ant-timeline-item-head-blue {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ant-timeline-item-content {
+  color: var(--color-primary) !important;
+}
+
+.ant-timeline-item-tail {
+  border-left-color: var(--color-border-secondary) !important;
+}
+
+/* 步骤导航图标样式 */
+.step-icon {
+  border: 1px solid var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.current-step .step-icon {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* 表格样式 */
+.ant-table-content table {
+  border-radius: 8px;
+  width: 100% !important;
+}
+
+.ant-table-thead > tr > th {
+  background-color: var(--color-bg-container) !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 500;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom-color: var(--color-border-secondary) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: var(--color-primary-bg) !important;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-color: var(--color-border-secondary);
+}
+
+.ant-tag-blue {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-bg) !important;
+  border-color: var(--color-primary-border) !important;
+}
+
+/* 分页样式 */
+.ant-pagination-item-active {
+  border-color: var(--color-primary) !important;
+}
+
+.ant-pagination-item-active a {
+  color: var(--color-primary) !important;
+}
+
+/* 卡片样式 */
+.ant-card-head-title {
+  color: var(--color-text-base);
+}
+
+/* 按钮样式 */
+.ant-btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+.ant-btn-link {
+  color: var(--color-primary) !important;
+}
+
+.ant-btn-link:hover {
+  color: var(--color-primary-hover) !important;
+}
+
+/* Progress组件样式 */
+.ant-progress-circle-path {
+  stroke: var(--color-primary) !important;
+}
+
+/* Radio按钮样式 */
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--color-primary) !important;
+}
+
+.ant-radio-inner::after {
+  background-color: var(--color-primary) !important;
+}
+
+/* Checkbox样式 */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Select组件样式 */
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: var(--color-primary-bg) !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2) !important;
+}
+
+/* Switch组件样式 */
+.ant-switch-checked {
+  background-color: var(--color-primary) !important;
+} 

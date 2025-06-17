@@ -1,0 +1,218 @@
+/* 筛选系统样式 */
+.filter-system {
+  width: 832px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.filter-popover {
+  width: 480px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  border: 1px solid #122415;
+}
+
+.filter-popover .ant-popover-inner {
+  border-radius: 16px;
+  padding: 0;
+}
+
+.filter-popover .ant-popover-arrow {
+  display: none;
+}
+
+.filter-card {
+  width: 100%;
+}
+
+.filter-card-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2024;
+  margin: 0;
+}
+
+.filter-card-content {
+  padding: 20px 24px;
+}
+
+.filter-condition {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.filter-condition-field,
+.filter-condition-operator,
+.filter-condition-value {
+  margin-right: 8px;
+}
+
+.filter-condition-field {
+  width: 120px;
+}
+
+.filter-condition-operator {
+  width: 100px;
+}
+
+.filter-condition-value {
+  flex: 1;
+}
+
+.filter-condition-remove {
+  margin-left: 8px;
+  color: #8f9098;
+  cursor: pointer;
+}
+
+.filter-add-condition {
+  color: var(--color-primary);
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.filter-add-condition:hover {
+  text-decoration: underline;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.filter-prev-btn,
+.filter-next-btn,
+.filter-save-btn {
+  min-width: 100px;
+}
+
+.filter-save-btn {
+  background-color: var(--color-primary);
+}
+
+/* 分组和排序卡片样式 */
+.group-options,
+.sort-options {
+  margin-bottom: 24px;
+}
+
+.group-option,
+.sort-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.group-field,
+.sort-field {
+  width: 150px;
+  margin-right: 12px;
+}
+
+.sort-direction {
+  width: 120px;
+}
+
+/* 动画效果 */
+.filter-step-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.filter-step-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.filter-step-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.filter-step-exit-active {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* 生成报告按钮样式 */
+.generateReportButton {
+  margin-right: 8px;
+  font-size: 14px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* 为生成报告按钮添加悬停效果 */
+.generateReportButton:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* 设置模态框中表格的最大高度 */
+.report-modal-table {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* 圆形按钮组样式 */
+.circleButtonGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+/* 圆形按钮样式 */
+.circleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+/* 第一个按钮使用主色 */
+.circleButton:nth-child(1) {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* 第二个按钮使用次级色 */
+.circleButton:nth-child(2) {
+  background-color: var(--color-assist-2);
+  border-color: var(--color-assist-2);
+}
+
+/* 第三个按钮使用主色加深 */
+.circleButton:nth-child(3) {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* 圆形按钮悬停效果 */
+.circleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+

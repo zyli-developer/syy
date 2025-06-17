@@ -1,0 +1,132 @@
+.searchContainer {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  width: 100%;
+}
+
+.conversationList {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+}
+
+.conversationItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.conversationItem:hover {
+  background-color: #f5f5f5;
+}
+
+.conversationItem.selected {
+  background-color: #e6f7ff;
+}
+
+.conversationAvatar {
+  flex-shrink: 0;
+}
+
+.conversationInfo {
+  flex: 1;
+  overflow: hidden;
+}
+
+.conversationName {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conversationLastMessage {
+  font-size: 12px;
+  color: #8c8c8c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectedTextSection {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border-left: 3px solid #1890ff;
+}
+
+.selectedTextHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.selectedTextTitle {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.selectedTextType {
+  font-size: 14px;
+}
+
+.selectedText {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 42px; /* 为标签留出空间 */
+  min-height: 24px;
+}
+
+.quoteTypeIndicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 12px;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+/* 附加消息区域样式 */
+.additionalMessageSection {
+  margin-bottom: 16px;
+}
+
+.additionalMessageTitle {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.additionalMessageInput {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.additionalMessageInput > div {
+  border-radius: 8px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+} 

@@ -1,0 +1,240 @@
+.comments-list {
+  padding: 8px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  max-height: calc(100vh - 320px);
+  height: 432px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* 自定义滚动条样式 - 隐藏滚动条 */
+.comments-list::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.comments-list {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.comments-list-title {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.88);
+  padding-left: 4px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 3;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.comments-list-empty {
+  padding: 16px;
+  text-align: center;
+  color: #8f9098;
+  font-size: 12px;
+}
+
+.comments-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px; /* 为滚动条留出空间 */
+}
+
+.comment-item {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 观点卡片头部 */
+.comment-card-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid transparent;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+/* 观点序号指示器 */
+.comment-indicator {
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 观点摘要 */
+.comment-summary {
+  flex: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+  overflow: hidden;
+}
+
+.comment-summary-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* 展开/折叠图标 */
+.comment-expand-icon {
+  flex: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c8c8c;
+}
+
+/* 观点详情 */
+.comment-detail {
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-top: 1px solid #f0f0f0;
+  max-height: 300px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* 观点内容 */
+.comment-content-wrapper {
+  margin-bottom: 12px;
+}
+
+.comment-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* 附件区域 */
+.comment-attachments {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  border: 1px solid #f0f0f0;
+}
+
+.attachments-header {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.attachments-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.attachment-tag {
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+/* 评论底部 */
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed #eee;
+}
+
+.comment-author-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.commenter-avatar {
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.commenter-name {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+  margin-right: 8px;
+}
+
+.comment-time {
+  font-size: 11px;
+  color: #8f9098;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 适配小屏幕 */
+@media (max-width: 576px) {
+  .comment-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .comment-actions {
+    align-self: flex-end;
+  }
+}
+
+/* 修复移动端样式问题 */
+@media (max-width: 768px) {
+  .comments-list {
+    max-height: calc(100vh - 220px);
+  }
+  
+  .comment-detail {
+    max-height: 250px;
+  }
+} 

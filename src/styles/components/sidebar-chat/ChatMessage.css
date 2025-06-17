@@ -1,0 +1,156 @@
+/* 会话分割线样式 */
+.session-divider {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.session-divider-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 12px;
+  z-index: 2;
+}
+
+.session-divider-content::before,
+.session-divider-content::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background-color: var(--color-border-secondary);
+  width: 100px;
+}
+
+.session-divider-content::before {
+  right: 100%;
+}
+
+.session-divider-content::after {
+  left: 100%;
+}
+
+.divider-text {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.divider-quote {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin-left: 8px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toggle-expand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.toggle-expand-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.session-divider.session-collapsed .divider-text {
+  font-weight: 400;
+}
+
+/* 删除旧的分割线样式 */
+/* .session-divider-line {
+  display: none;
+} */
+
+/* 会话ID信息 */
+.session-divider-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 12px;
+  margin-top: 2px;
+}
+
+.session-id-info {
+  font-size: 10px;
+  color: var(--color-text-disabled);
+}
+
+/* 会话内容区域样式 */
+.message-container.in-session {
+  margin-left: 8px;
+  border-left: 2px solid #e6f7ff;
+  padding-left: 8px;
+}
+
+/* 活跃会话引用栏 */
+.active-session-bar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(88, 189, 109, 0.1);
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.active-session-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.active-session-quote {
+  font-size: 12px;
+  color: #666;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.close-session-btn {
+  background: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.close-session-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* 自定义消息样式 */
+.message-bubble.custom-message {
+  background-color: #f5f6fa;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+} 

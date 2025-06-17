@@ -1,0 +1,106 @@
+/* 连续选择模式样式 */
+
+/* 高亮文本样式 */
+.text-highlight-selection {
+  background-color: rgba(24, 144, 255, 0.25) !important;
+  border-radius: 2px !important;
+  padding: 1px 0 !important;
+  border-bottom: 1px dashed #1890ff !important;
+  position: relative !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s !important;
+  display: inline !important;
+  color: #000 !important;
+  font-weight: normal !important;
+  box-shadow: 0 0 2px rgba(24, 144, 255, 0.3) !important;
+  z-index: 1 !important;
+}
+
+.text-highlight-selection:hover {
+  background-color: rgba(24, 144, 255, 0.35) !important;
+  box-shadow: 0 0 4px rgba(24, 144, 255, 0.5) !important;
+}
+
+/* 确保嵌套高亮的情况下，内部高亮仍然可见 */
+.text-highlight-selection .text-highlight-selection {
+  background-color: rgba(24, 144, 255, 0.4) !important;
+  box-shadow: 0 0 3px rgba(24, 144, 255, 0.6) inset !important;
+  border: 1px solid rgba(24, 144, 255, 0.7) !important;
+}
+
+/* 连续选择模式指示器 */
+.multi-select-mode .multi-select-content {
+  position: relative;
+}
+
+.multi-select-mode .multi-select-content::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid rgba(24, 144, 255, 0.5);
+  border-radius: 4px;
+  pointer-events: none;
+  animation: pulse 2s infinite;
+}
+
+/* 连续选择按钮样式 */
+.multi-select-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #8f9098;
+  transition: all 0.2s;
+  border: none;
+  background: transparent;
+}
+
+.multi-select-button:hover {
+  background-color: #f5f5f5;
+}
+
+.multi-select-button.active {
+  background-color: #1890ff;
+  color: white;
+}
+
+/* 临时多选模式样式 */
+body.multi-select-temp {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%231890ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>'), auto;
+}
+
+/* 联合选择视觉指示器 */
+.multi-select-mode .contentText,
+.multi-select-mode .qa-content-text {
+  position: relative;
+  border: 2px solid rgba(24, 144, 255, 0.3);
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+}
+
+/* 非连续选择模式下不显示边框 */
+.contentText,
+.qa-content-text {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(24, 144, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0);
+  }
+} 

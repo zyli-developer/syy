@@ -1,0 +1,84 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: This rule explains the React component pattern, the usage methods of hooks, and best practices.
+globs: **/*.jsx,**/*.tsx
+alwaysApply: false
+---
+
+# React Rules
+
+Component structure
+Give priority to using functional components rather than class components
+Keep the components small and focused
+Extract reusable logic into a custom hook
+Use composition instead of inheritance
+Implement the appropriate prop types using TypeScript
+Break down large components into smaller and more focused ones
+
+## Hooks
+Follow the rules of Hooks
+Implement reusable logic using custom hooks
+Keep hooks focused and simple
+Use the appropriate dependent array in the useEffect
+Implement the cleaning function in useEffect when necessary
+Avoid nested hooks
+
+Status management
+Use useState to manage the local state of the component
+Use useReducer to handle complex state logic
+Share the state using the Context API
+Bring the status as close as possible to the place where it is used
+Avoid prop drilling through appropriate state management
+Use the state management library only when necessary
+
+"Performance"
+- Achieve appropriate memorization (useMemo, useCallback)
+Use React.memo for components with high overhead
+Avoid unnecessary re-rendering
+Implement appropriate lazy loading
+Use the appropriate key attribute in the list
+Analyze and optimize rendering performance
+
+"Form"
+Use controlled components for form input
+Implement appropriate form validation
+Handle the form submission status correctly
+Display the appropriate loading and error status
+Use the form library for complex forms
+Implement appropriate accessibility for the form
+
+Error handling
+Achieve Error Boundaries
+Handle asynchronous errors correctly
+Display user-friendly error messages
+Implement an appropriate backup UI
+Record errors appropriately
+Handle edge situations gracefully
+
+"Test"
+Write unit tests for components
+Implement integration testing for complex processes
+Use the React Testing Library
+Test user interaction
+Test the error scenario
+Achieve appropriate simulation data
+
+Accessibility
+Use semantic HTML elements
+Implement the appropriate ARIA attributes
+Make sure the keyboard navigation
+Test using a screen reader
+Management Focus
+Provide appropriate alt text for the image
+
+Code organization
+Organize the relevant components together
+Use appropriate file naming conventions
+Implement an appropriate directory structure
+Keep the style close to the components
+Use appropriate import/export
+Record the complex component logic

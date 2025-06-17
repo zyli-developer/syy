@@ -1,0 +1,376 @@
+/* 任务卡片样式 */
+.task-card {
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--color-chat-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border: 1px solid #e8e9f1;
+  margin-bottom: 30px;
+  height: 304px;
+  max-width: 85%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 卡片标题 */
+.task-card-header {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card-title {
+  font-size: 16px;  
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* 作者信息和标签 */
+.task-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.task-author-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-author-avatar {
+  background-color: #f0f0f0;
+}
+
+.task-assigned-text,
+.task-from-text {
+  color: #8f9098;
+  font-size: 12px;
+}
+
+.task-author-name,
+.task-source-name{
+  font-weight: 500;
+  font-size: 12px;
+  color: #000;
+}
+
+.task-card-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.task-tag {
+  border-radius: 12px;
+  background-color: #C7D7D0;
+  color: #000;
+  border: none;
+  font-size: 12px;
+  padding: 1px 8px;
+  height: auto;
+  line-height: 1.5;
+}
+
+.task-card-divider {
+  height: 1px;
+  background-color: #eaedf3;
+  margin: 0 -16px 12px;
+}
+
+/* 卡片内容水平布局 */
+.task-card-content {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* 左侧 - 任务详情 */
+.task-card-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 200px;
+  max-width: 500px;
+  width: 536px;
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: #F7F9F8;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.task-details {
+  margin-bottom: 8px;
+  flex: 1;
+  min-height: 0;
+}
+
+.task-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: var(--color-text-base);
+}
+
+
+.task-detail-label {
+  font-weight: 500;
+  color: #000;
+  margin-right: 6px;
+  font-size: 13px;
+}
+
+.task-detail-value {
+  color: #71727a;
+  font-size: 12px;
+  line-height: 1.2;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;       /* 显示行数 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 任务操作按钮 */
+.task-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  width: 100%;
+  min-height: 0;
+}
+
+.task-action-buttons {
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.task-dimension-link {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.task-action-item {
+  min-width: 60px;
+  width: 60px;
+  flex: 0 0 auto;
+  height: 60px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.task-action-item:last-child {
+  margin-right: 0;
+}
+
+.task-action-item.active {
+  border: 1px solid var(--color-primary);
+  background-color: #fff;
+}
+
+.task-action-item.add-item {
+  border: 1px dashed #c5c6cc;
+  background-color: #f8f9fe;
+}
+
+.task-action-icon {
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+.task-action-text {
+  font-size: 11px;
+  color: #71727a;
+}
+
+.task-action-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #e8e9f1;
+  color: #8f9098;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+
+
+.task-chart-container,
+.task-radar-chart-container {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 170px;
+  min-height: 0;
+  border-radius: 24px;
+}
+
+.task-chart-title {
+  font-size: 10px;
+  font-weight: 500;
+  color: #1f2024;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.task-chart,
+.task-radar-chart {
+  flex: 1;
+  max-height: 130px;
+  min-height: 0;
+}
+
+
+
+.task-chart-link {
+  text-align: center;
+  width: 100%;
+}
+
+.task-chart-link a {
+  color: var(--color-primary);
+  font-size: 9px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+
+
+
+
+/* 任务页面样式 */
+.task-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  align-items: center;
+  transition: padding 0.3s ease;
+}
+
+/* When chat is closed, apply 190px margin */
+.task-page.chat-closed {
+  padding: 0 190px;
+}
+
+/* When chat is open, keep current margins */
+.task-page.chat-open {
+  padding: 0 16px;
+}
+
+/* Responsive adjustments for the task page margins */
+@media (max-width: 1440px) {
+  .task-page.chat-closed {
+    padding: 0 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .task-page.chat-closed {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .task-page.chat-closed {
+    padding: 0 40px;
+  }
+
+  .task-page.chat-open {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .task-page.chat-closed,
+  .task-page.chat-open {
+    padding: 0 16px;
+  }
+}
+
+.task-page-header {
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+.task-page-title {
+  margin-bottom: 0 !important;
+}
+
+.task-tabs {
+  margin-bottom: 16px;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 工具栏 */
+.task-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.task-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding-bottom: 24px;
+}
+
+.task-cards-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.task-card-wrapper {
+  margin-bottom: 0;
+}

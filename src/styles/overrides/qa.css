@@ -1,0 +1,106 @@
+/* QA组件样式覆盖 */
+.annotationTitle h5 {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+/* 将h5元素的样式应用于div元素 */
+.qa-title-as-div {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+/* QA区域的文本选择样式 */
+.contentText, .qa-content-text {
+  user-select: text !important;
+  cursor: text !important;
+  position: relative;
+  line-height: 1.6;
+}
+
+.contentText::selection,
+.contentText *::selection,
+.qa-content-text::selection,
+.qa-content-text *::selection {
+  background-color: rgba(24, 144, 255, 0.2);
+}
+
+/* 确保QA区域中的高亮效果显示正常 */
+.qa-content-text .text-highlight-selection,
+.contentText .text-highlight-selection,
+.text-highlight-selection {
+  background-color: rgba(24, 144, 255, 0.15) !important;
+  border-radius: 2px !important;
+  padding: 1px 0 !important;
+  border-bottom: 1px dashed #1890ff !important;
+  position: relative !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s !important;
+  color: inherit !important;
+  display: inline !important;
+}
+
+.qa-content-text .text-highlight-selection:hover,
+.contentText .text-highlight-selection:hover,
+.text-highlight-selection:hover {
+  background-color: rgba(24, 144, 255, 0.25) !important;
+}
+
+/* 连续选择模式指示器 */
+.multi-select-mode .contentText,
+.multi-select-mode .qa-content-text {
+  position: relative;
+  border: 2px solid rgba(24, 144, 255, 0.3);
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(24, 144, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0);
+  }
+}
+
+/* 注释文本样式增强 */
+.annotationText {
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* 注释面板增强样式 */
+.annotationPanel {
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.annotationPanel:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 设置更大的点击区域，方便右键菜单触发 */
+.annotationContent {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* 右键菜单样式 */
+.text-context-menu {
+  z-index: 1050;
+  position: fixed;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+} 

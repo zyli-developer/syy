@@ -1,0 +1,18 @@
+/* 调整Sender组件中的发送按钮样式 */
+.chat-sender .antdx-sender-send-btn {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.chat-sender .antdx-sender-send-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* 当有引用内容时，调整Sender组件的边框样式 */
+.chat-quote-header + .chat-sender,
+.chat-quotes-container + .chat-sender {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+} 

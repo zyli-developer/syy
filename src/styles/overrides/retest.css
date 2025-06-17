@@ -1,0 +1,36 @@
+/* 再次测试页面样式覆盖 */
+
+.retest-preparation .ant-list-item {
+  padding: 12px 16px;
+  align-items: flex-start;
+}
+
+.retest-preparation .ant-checkbox-wrapper {
+  margin-right: 20px;
+}
+
+.retest-preparation .ant-card-head {
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+.retest-preparation .ant-card-head-title {
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.retest-preparation .ant-alert {
+  border-radius: 6px;
+}
+
+.retest-preparation .ant-card {
+  border-radius: 6px;
+}
+
+.retest-preparation .ant-list-bordered {
+  border-radius: 6px;
+}
+
+.retest-progress .ant-progress-text {
+  font-size: 14px;
+} 

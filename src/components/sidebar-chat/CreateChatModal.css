@@ -1,0 +1,330 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .create-chat-modal {
+    width: 480px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modal-appear 0.3s ease-out;
+  }
+  
+  @keyframes modal-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .modal-tabs {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .tab-button.active {
+    background-color: #f5f5f5;
+    font-weight: 500;
+  }
+  
+  .tab-icon {
+    font-size: 18px;
+  }
+  
+  .modal-content {
+    padding: 16px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  /* 群组操作标签(创建/加入)样式 */
+  .group-action-tabs {
+    display: flex;
+    margin-bottom: 16px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 2px;
+  }
+  
+  .action-tab {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+  
+  .action-tab.active {
+    background-color: white;
+    font-weight: 500;
+    color: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .action-tab:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* 表单提示文本样式 */
+  .form-tip {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  
+  .search-container {
+    display: flex;
+    margin-bottom: 12px;
+  }
+  
+  .search-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+  }
+  
+  .search-button {
+    padding: 0 12px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .search-results {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    min-height: 100px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .search-placeholder {
+    color: #888;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  .selected-members {
+    margin-top: 16px;
+  }
+  
+  .selected-members h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  
+  .member-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .member-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  
+  .remove-member {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .cancel-button {
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .create-button {
+    padding: 8px 16px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .create-button:hover {
+    background-color: #40a9ff;
+  }
+  
+  .create-button:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+  }
+  
+  /* 搜索结果列表样式 */
+  .search-results-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-result-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .search-result-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1677ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .search-result-info {
+    flex: 1;
+  }
+  
+  .search-result-name {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .search-result-id {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+  }
+  
